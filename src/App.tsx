@@ -1,6 +1,7 @@
 import {ChangeEvent, useState} from 'react';
 import './App.css'
-import {FullInput} from './components/FullInput';
+import {Input} from './components/Input';
+import {Button} from './components/Button';
 
 function App() {
     let [message, setMessage] = useState([
@@ -26,11 +27,8 @@ function App() {
 
     return (
         <div className="App">
-            <FullInput
-                value={title}
-                onChangeInputHandler={onChangeInputHandler}
-                onClickButtonHandler={onClickButtonHandler}
-            />
+            <Input  value={title} onChangeInputHandler={onChangeInputHandler}/>
+            <Button onClickButtonHandler={onClickButtonHandler} name={'+'}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
