@@ -20,12 +20,14 @@ function App() {
         let newData = {
             message: title
         }
-        setMessage([...message, newData])
+        setMessage([newData, ...message])
+        setTitle('')
     }
 
     return (
         <div className="App">
             <FullInput
+                value={title}
                 onChangeInputHandler={onChangeInputHandler}
                 onClickButtonHandler={onClickButtonHandler}
             />
